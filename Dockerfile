@@ -1,5 +1,6 @@
 FROM python:3.10.5-alpine3.16
 
-RUN pip install --no-cache-dir --upgrade j2cli j2cli[yaml] pyyaml
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 CMD [ "j2" ]
